@@ -1,6 +1,6 @@
 export const recommendedVideos = (req, res) => res.send("Homepage Videos");
 
-export const watchVideo = (req, res) => res.send("Watch Video");
+export const watchVideo = (req, res) => res.render("watch");
 export const editVideo = (req, res) => {
   console.log(req.params);
   return res.send(`Edit Video ${req.params.id}`);
