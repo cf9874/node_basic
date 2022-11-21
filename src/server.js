@@ -7,7 +7,7 @@ const handleHome = (req, res) => {
   console.log("hihi");
 
   //   return res.end();
-  return res.send("I still love you.");
+  return res.send("<h1>I still love you.</h1>");
 };
 const handleLogin = (req, res) => {
   return res.send("login page");
