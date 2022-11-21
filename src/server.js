@@ -10,7 +10,7 @@ const handleHome = (req, res) => {
   return res.send("<h1>I still love you.</h1>");
 };
 const handleLogin = (req, res) => {
-  return res.send("login page");
+  return res.send({ messge: "here is login page" });
 };
 //how to respond GET request
 app.get("/", handleHome);
