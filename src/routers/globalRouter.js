@@ -1,6 +1,11 @@
 import express from "express";
+import { join, login } from "../controllers/userController";
+import { recommendedVideos } from "../controllers/videoController";
+
 const globalRouter = express.Router();
-const handleHome = (req, res) => res.send("Homes");
-globalRouter.get("/", handleHome);
+
+globalRouter.get("/", recommendedVideos);
+globalRouter.get("/join", join);
+globalRouter.get("/login", login);
 
 export default globalRouter;
