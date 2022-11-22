@@ -3,9 +3,14 @@ html(lang="en")
   head
     title #{pageTitle} | Wetube
     script(type='text/javascript').
+    link(rel="stylesheet" href="https://unpkg.com/mvp.css")
 body 
     h1 Layout
-    block content
-    block subs
-    include patials/footer.pug
+    main
+        block content
+        block subs
+        input(placeholder="what is your name")
+        button send
+        br
+        include patials/footer.pug
     
