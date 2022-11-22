@@ -1,8 +1,8 @@
-doctype html
-html(lang="en")
-  head
-    title= pageTitle
-    script(type='text/javascript').
-body 
-    h1 'Welcome to wetube!'
-    include patials/footer.pug
+extends layout.pug
+block head 
+  title Home | wetube
+//- block의 순서는 상관 없음 
+block content  
+  h1 this is Home
+block subs 
+  h2 home, my home, comfortable
