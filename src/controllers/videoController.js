@@ -1,6 +1,13 @@
 import { HOME, WATCH } from "../enum";
 
-export const recommendedVideos = (req, res) => res.render("home", { pageTitle: HOME });
+const mockUser = {
+  username: "Kim",
+  id: "cf9874",
+  email: "cf9874@gmail.com",
+  loggedIn: true,
+};
+
+export const recommendedVideos = (req, res) => res.render("home", { pageTitle: HOME, mockUser });
 
 export const watchVideo = (req, res) => res.render("watch", { pageTitle: WATCH });
 export const editVideo = (req, res) => {

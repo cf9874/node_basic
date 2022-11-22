@@ -5,12 +5,24 @@ html(lang="en")
     script(type='text/javascript').
     link(rel="stylesheet" href="https://unpkg.com/mvp.css")
 body 
-    h1 Layout
+    header
+      nav
+            ul
+                li
+                    if mockUser.loggedIn                    
+                        a(href='/logout') Logout
+                    else                     
+                        a(href='/login') Login
+
+    if mockUser.loggedIn
+        h2 Hello #{mockUser.username}!
+    else
+        h1=pageTitle                         
     main
         block content
         block subs
         input(placeholder="what is your name")
         button send
         br
-        include patials/footer.pug
+    include patials/footer.pug
     
