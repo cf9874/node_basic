@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 
-import { globalRouter, userRouter, videoRouter } from "./routers";
+import * as route from "./routers";
 
 const PORT = 4000;
 const app = express();
@@ -13,9 +13,9 @@ app.set("views", process.cwd() + "/src/views");
 // views setting
 app.use(loggerMiddleware);
 
-app.use("/", globalRouter);
-app.use("/users", userRouter);
-app.use("/videos", videoRouter);
+app.use("/", route.globalRouter);
+app.use("/users", route.userRouter);
+app.use("/videos", route.videoRouter);
 
 const handleListening = () => {
   console.log(`server listening on port http://localhost:${PORT}`);

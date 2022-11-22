@@ -1,6 +1,5 @@
 import express from "express";
-import { join, login } from "../controllers/userController";
-import { recommendedVideos } from "../controllers/videoController";
+import { join, login, recommendedVideos } from "../controllers";
 
 const globalRouter = express.Router();
 

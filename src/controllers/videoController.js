@@ -1,6 +1,8 @@
-export const recommendedVideos = (req, res) => res.render("home");
+import { HOME, WATCH } from "../enum";
 
-export const watchVideo = (req, res) => res.render("watch");
+export const recommendedVideos = (req, res) => res.render("home", { pageTitle: HOME });
+
+export const watchVideo = (req, res) => res.render("watch", { pageTitle: WATCH });
 export const editVideo = (req, res) => {
   console.log(req.params);
   return res.send(`Edit Video ${req.params.id}`);
