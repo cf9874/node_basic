@@ -1,0 +1,8 @@
+mixin video(video)
+    div
+      h4=video.title
+      ul
+        li #{video.rate}/5
+        li Posted : #{video.createdAt}
+        li #{video.views} views
+    //- li #{video}

@@ -7,7 +7,15 @@ const mockUser = {
   loggedIn: true,
 };
 
-export const recommendedVideos = (req, res) => res.render("home", { pageTitle: HOME, mockUser });
+export const recommendedVideos = (req, res) => {
+  const videoList = [
+    { id: 1, title: "titanic", rate: 5.0, year: 1980, views: 123, createdAt: "2 minutes ago" },
+    { id: 2, title: "avengers", rate: 4.8, year: 2014, views: 123, createdAt: "2 minutes ago" },
+    { id: 3, title: "avartar", rate: 4.7, year: 2010, views: 123, createdAt: "2 minutes ago" },
+  ];
+
+  return res.render("home", { pageTitle: HOME, mockUser, videoList });
+};
 
 export const watchVideo = (req, res) => res.render("watch", { pageTitle: WATCH });
 export const editVideo = (req, res) => {
