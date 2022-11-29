@@ -12,6 +12,7 @@ export const recommendedVideos = (req, res) => {
     { id: 1, title: "titanic", rate: 5.0, year: 1980, views: 123, createdAt: "2 minutes ago" },
     { id: 2, title: "avengers", rate: 4.8, year: 2014, views: 123, createdAt: "2 minutes ago" },
     { id: 3, title: "avartar", rate: 4.7, year: 2010, views: 123, createdAt: "2 minutes ago" },
+    { id: 4, title: "The chaser", rate: 4.9, year: 2010, views: 800, createdAt: "6 minutes ago" },
   ];
 
   return res.render("home", { pageTitle: HOME, mockUser, videoList });
