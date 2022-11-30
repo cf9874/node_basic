@@ -1,8 +1,11 @@
 import express from "express";
-import { handleJoin } from "../controllers";
-import { handleHome } from "../controllers/videoController";
+import { handleHome, handleJoin, login, search } from "../controllers";
 
 export const globalRouter = express.Router();
 
 globalRouter.get("/", handleHome);
 globalRouter.get("/join", handleJoin);
+globalRouter.get("/login", login);
+// login
+globalRouter.get("/search", search);
+// video search

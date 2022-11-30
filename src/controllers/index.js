@@ -1,4 +1,17 @@
-import { handleDeleteUser, handleEditUser, handleJoin } from "./userController";
-import { handleHome, handleWatchVideo, handleEditVideo } from "./videoController";
+import { handleJoin, login, handleEditUser, logout, see, deleteUser } from "./userController";
+import { handleHome, search, watchVideo, editVideo, uploadVideo, deleteVideo } from "./videoController";
 
-export { handleJoin, handleDeleteUser, handleEditUser, handleWatchVideo, handleEditVideo };
+export {
+  handleJoin,
+  login,
+  handleEditUser,
+  logout,
+  see,
+  deleteUser,
+  handleHome,
+  search,
+  watchVideo,
+  editVideo,
+  uploadVideo,
+  deleteVideo,
+};

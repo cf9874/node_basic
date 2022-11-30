@@ -1,7 +1,9 @@
 import express from "express";
-import { handleDeleteUser, handleEditUser } from "../controllers";
+import { deleteVideo, handleEditUser, logout, see } from "../controllers";
 
 export const userRouter = express.Router();
 
+userRouter.get("/logout", logout);
 userRouter.get("/edit", handleEditUser);
-userRouter.get("/delete", handleDeleteUser);
+userRouter.get("/delete", deleteVideo);
+userRouter.get("/:id", see);
