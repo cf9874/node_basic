@@ -26,6 +26,8 @@
     "@babel/core": "^7.20.2",
     "@babel/node": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
-    "nodemon": "^2.0.20"
+    "@prettier/plugin-pug": "^2.3.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0"
   }
 }

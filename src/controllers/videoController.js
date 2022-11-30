@@ -1,5 +1,9 @@
+import { EDIT, HOME, WATCH } from "../enum";
+
 export const handleHome = (req, res) => {
-  return res.send("Home, recommend video : /");
+  return res.render("home", {
+    pageTitle: HOME,
+  });
 };
 
 export const search = (req, res) => {
@@ -8,12 +12,14 @@ export const search = (req, res) => {
 
 export const watchVideo = (req, res) => {
   console.log(req.params);
-  return res.send(`Watch Video # ${req.params.id} `);
+  return res.render("watch", {
+    pageTitle: WATCH,
+  });
 };
 
 export const editVideo = (req, res) => {
   console.log(req.params);
-  return res.send(`Edit Video : ${req.url} `);
+  return res.render("edit" < { pageTitle: EDIT });
 };
 
 export const uploadVideo = (req, res) => {
