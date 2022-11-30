@@ -7,10 +7,12 @@ export const search = (req, res) => {
 };
 
 export const watchVideo = (req, res) => {
-  return res.send(`Watch Video : ${req.url} `);
+  console.log(req.params);
+  return res.send(`Watch Video # ${req.params.id} `);
 };
 
 export const editVideo = (req, res) => {
+  console.log(req.params);
   return res.send(`Edit Video : ${req.url} `);
 };
 
@@ -19,5 +21,6 @@ export const uploadVideo = (req, res) => {
 };
 
 export const deleteVideo = (req, res) => {
+  console.log(req.params);
   return res.send(`Delete Video : ${req.url} `);
 };

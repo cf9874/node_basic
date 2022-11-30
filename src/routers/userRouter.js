@@ -6,4 +6,4 @@ export const userRouter = express.Router();
 userRouter.get("/logout", logout);
 userRouter.get("/edit", handleEditUser);
 userRouter.get("/delete", deleteVideo);
-userRouter.get("/:id", see);
+userRouter.get("/:id(\\d+)", see);
