@@ -9,7 +9,7 @@ const handleHome = (req, res, next) => {
 };
 // next 는 다음함수를 호출해줌
 
-app.get("/", handleHome);
+app.get("/", handleHome, () => console.log("home"));
 app.get("/users", () => console.log(9874));
 app.get("/videos", () => console.log(9598));
 
