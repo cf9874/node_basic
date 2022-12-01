@@ -1,3 +1,8 @@
+const mockUser = {
+  username: "KIM",
+  loggedIn: true,
+};
+
 export const handleJoin = (req, res) => {
   return res.send("Join : /join");
 };

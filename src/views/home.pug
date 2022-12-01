@@ -1,7 +1,10 @@
 extends ./partials/layout
+include ./mixins/video
 
 block head
   title HOME | Wetube
 
 block mainText
   h1 Welcome home!
+    each video in videoList
+      +video(video)

@@ -1,8 +1,38 @@
 import { EDIT, HOME, WATCH } from "../enum";
-
+const videoList = [
+  {
+    title: "Titanic",
+    year: 1990,
+    rating: 4.5,
+    comments: 2,
+    views: 8000,
+  },
+  {
+    title: "Avartar",
+    year: 2011,
+    rating: 4.8,
+    comments: 3,
+    views: 541560,
+  },
+  {
+    title: "Avengers",
+    year: 2014,
+    rating: 4.9,
+    comments: 200,
+    views: 561894562,
+  },
+  {
+    title: "The Chaser",
+    year: 2008,
+    rating: 5.0,
+    comments: 1856,
+    views: 15263189,
+  },
+];
 export const handleHome = (req, res) => {
   return res.render("home", {
     pageTitle: HOME,
+    videoList,
   });
 };
 
