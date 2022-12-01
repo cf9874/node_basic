@@ -4,4 +4,7 @@ block head
   title #{ pageTitle } | Wetube
 
 block mainText
-  h1 Watch Video!
+  h1= video.title
+  ul
+    li views : #{ video.views }
+  a(href=`${video.id}/edit`) Edit Video &rarr;

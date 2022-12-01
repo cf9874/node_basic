@@ -1,6 +1,7 @@
 import { EDIT, HOME, WATCH } from "../enum";
 const videoList = [
   {
+    id: 1,
     title: "Titanic",
     year: 1990,
     rating: 4.5,
@@ -8,6 +9,7 @@ const videoList = [
     views: 8000,
   },
   {
+    id: 2,
     title: "Avartar",
     year: 2011,
     rating: 4.8,
@@ -15,6 +17,7 @@ const videoList = [
     views: 541560,
   },
   {
+    id: 3,
     title: "Avengers",
     year: 2014,
     rating: 4.9,
@@ -22,6 +25,7 @@ const videoList = [
     views: 561894562,
   },
   {
+    id: 4,
     title: "The Chaser",
     year: 2008,
     rating: 5.0,
@@ -41,15 +45,21 @@ export const search = (req, res) => {
 };
 
 export const watchVideo = (req, res) => {
-  console.log(req.params);
+  const { id } = req.params;
+  console.log(id);
+  const video = videoList[id - 1];
   return res.render("watch", {
+    id,
     pageTitle: WATCH,
+    video,
   });
 };
 
 export const editVideo = (req, res) => {
-  console.log(req.params);
-  return res.render("edit" < { pageTitle: EDIT });
+  const { id } = req.params;
+  console.log(id);
+  const video = videoList[id - 1];
+  return res.render("edit", { pageTitle: EDIT, video });
 };
 
 export const uploadVideo = (req, res) => {
