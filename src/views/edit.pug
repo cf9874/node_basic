@@ -4,4 +4,7 @@ block head
   title EDIT | Wetube
 
 block mainText
-  h1 Edit Video!
+  h1 Edit #{ video.title } !
+  form(method="POST")
+    input(placeholder="New Title", value=video.title, required)
+    input(value="Save", type="submit")

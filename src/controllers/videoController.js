@@ -62,6 +62,13 @@ export const editVideo = (req, res) => {
   return res.render("edit", { pageTitle: EDIT, video });
 };
 
+export const postEdit = (req, res) => {
+  const { id } = req.params;
+  console.log(9797, id);
+  console.log(req.body);
+  return res.redirect(`/videos/${id}`);
+};
+
 export const uploadVideo = (req, res) => {
   return res.send(`Upload Video : ${req.url} `);
 };
