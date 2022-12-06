@@ -66,6 +66,10 @@ export const postEdit = (req, res) => {
   const { id } = req.params;
   console.log(9797, id);
   console.log(req.body);
+  const { title } = req.body;
+  videoList[id - 1].title = title;
+  //Mock data를 사용하고 있기 때문에 임시로
+
   return res.redirect(`/videos/${id}`);
 };
 

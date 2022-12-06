@@ -6,5 +6,5 @@ block head
 block mainText
   h1 Edit #{ video.title } !
   form(method="POST")
-    input(placeholder="New Title", value=video.title, required)
+    input(name="title", placeholder="New Title", value=video.title, required)
     input(value="Save", type="submit")
