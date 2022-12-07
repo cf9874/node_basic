@@ -1,20 +1,21 @@
 import { EDIT, HOME, WATCH } from "../enum";
 import Video from "../models/Video";
 
-export const handleHome = (req, res) => {
-  Video.find({}, (error, videoList) => {
-    //database에서 data검색이 끝나야 rendering이 시작되므로
-    //제일 마지막에 실행됨. 따라서 이 안에서 render 시켜줘야함
-    //> database 검색이 끝나지 않았을 때 render되는 것을 막기 위함
-    //외부에 어떤 코드를 써도 이 블록은 마지막이 실행됨.
+export const handleHome = async (req, res) => {
+  try {
+    const videos = await Video.find({});
 
-    console.log("error", error);
-    console.log("videoList", videoList);
+    // callback과 달리 DB에서 결과값을 받아올 때 까지
+    // 다음 실행을 기다림
+
     return res.render("home", {
       pageTitle: HOME,
-      videoList: [],
+      videoList: videos,
     });
-  });
+  } catch (error) {
+    console.log(error);
+    // return res.render("server-error");
+  }
 };
 
 export const search = (req, res) => {
