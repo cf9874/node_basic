@@ -1,13 +1,6 @@
-import "./db";
-//file 자체를 import 하고 서버가 이 line을 보는 순간
-//서버가 mongo에 연결됨
-import "./models/Video";
-
 import express from "express";
 import morgan from "morgan";
 import { globalRouter, userRouter, videoRouter } from "./routers";
-
-const PORT = 4000;
 
 const app = express();
 const logger = morgan("dev");
@@ -24,9 +17,4 @@ app.use("/", globalRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
 
-const handleListening = () => {
-  console.log(`server listening on port http://localhost:${PORT}`);
-};
-app.listen(PORT, handleListening);
-
-//port 설정
+export default app;
