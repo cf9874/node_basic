@@ -6,5 +6,11 @@ block head
 
 block mainText
   h1 Welcome home!
-    each video in videoList
-      +video(video)
+    header
+    h1= pageTitle
+    nav
+      ul
+        li
+          a(href="/videos/upload") Upload Video
+  each video in videoList
+    +video(video)

@@ -1,5 +1,14 @@
 import { handleJoin, login, handleEditUser, logout, see, deleteUser } from "./userController";
-import { handleHome, search, watchVideo, editVideo, postEdit, uploadVideo, deleteVideo } from "./videoController";
+import {
+  handleHome,
+  search,
+  watchVideo,
+  editVideo,
+  postEdit,
+  getUpload,
+  postUpload,
+  deleteVideo,
+} from "./videoController";
 
 export {
   handleJoin,
@@ -13,6 +22,7 @@ export {
   watchVideo,
   editVideo,
   postEdit,
-  uploadVideo,
+  getUpload,
+  postUpload,
   deleteVideo,
 };

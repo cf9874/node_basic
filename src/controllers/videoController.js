@@ -73,8 +73,24 @@ export const postEdit = (req, res) => {
   return res.redirect(`/videos/${id}`);
 };
 
-export const uploadVideo = (req, res) => {
-  return res.send(`Upload Video : ${req.url} `);
+export const getUpload = (req, res) => {
+  return res.render("upload", { pageTitle: "Post Video" });
+};
+
+export const postUpload = (req, res) => {
+  const { title } = req.body;
+  console.log(8282, title);
+  const newVideo = {
+    title,
+    id: videoList.length,
+    year: 1991,
+    rating: 3.8,
+    comments: 156152,
+    views: 989845965,
+  };
+  videoList.push(newVideo);
+  // video array에 video 추가
+  return res.redirect("/");
 };
 
 export const deleteVideo = (req, res) => {
