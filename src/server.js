@@ -1,3 +1,6 @@
+import "./db";
+//file 자체를 import 하고 서버가 이 line을 보는 순간
+//서버가 mongo에 연결됨
 import express from "express";
 import morgan from "morgan";
 import { globalRouter, userRouter, videoRouter } from "./routers";
