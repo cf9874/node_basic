@@ -1,42 +1,19 @@
 import { EDIT, HOME, WATCH } from "../enum";
-const videoList = [
-  {
-    id: 1,
-    title: "Titanic",
-    year: 1990,
-    rating: 4.5,
-    comments: 2,
-    views: 8000,
-  },
-  {
-    id: 2,
-    title: "Avartar",
-    year: 2011,
-    rating: 4.8,
-    comments: 3,
-    views: 541560,
-  },
-  {
-    id: 3,
-    title: "Avengers",
-    year: 2014,
-    rating: 4.9,
-    comments: 200,
-    views: 561894562,
-  },
-  {
-    id: 4,
-    title: "The Chaser",
-    year: 2008,
-    rating: 5.0,
-    comments: 1856,
-    views: 15263189,
-  },
-];
+import Video from "../models/Video";
+
 export const handleHome = (req, res) => {
-  return res.render("home", {
-    pageTitle: HOME,
-    videoList,
+  Video.find({}, (error, videoList) => {
+    //database에서 data검색이 끝나야 rendering이 시작되므로
+    //제일 마지막에 실행됨. 따라서 이 안에서 render 시켜줘야함
+    //> database 검색이 끝나지 않았을 때 render되는 것을 막기 위함
+    //외부에 어떤 코드를 써도 이 블록은 마지막이 실행됨.
+
+    console.log("error", error);
+    console.log("videoList", videoList);
+    return res.render("home", {
+      pageTitle: HOME,
+      videoList: [],
+    });
   });
 };
 
@@ -47,19 +24,20 @@ export const search = (req, res) => {
 export const watchVideo = (req, res) => {
   const { id } = req.params;
   console.log(id);
-  const video = videoList[id - 1];
+
   return res.render("watch", {
     id,
     pageTitle: WATCH,
-    video,
   });
 };
 
 export const editVideo = (req, res) => {
   const { id } = req.params;
   console.log(id);
-  const video = videoList[id - 1];
-  return res.render("edit", { pageTitle: EDIT, video });
+
+  return res.render("edit", {
+    pageTitle: EDIT,
+  });
 };
 
 export const postEdit = (req, res) => {
@@ -67,8 +45,6 @@ export const postEdit = (req, res) => {
   console.log(9797, id);
   console.log(req.body);
   const { title } = req.body;
-  videoList[id - 1].title = title;
-  //Mock data를 사용하고 있기 때문에 임시로
 
   return res.redirect(`/videos/${id}`);
 };
@@ -80,16 +56,7 @@ export const getUpload = (req, res) => {
 export const postUpload = (req, res) => {
   const { title } = req.body;
   console.log(8282, title);
-  const newVideo = {
-    title,
-    id: videoList.length,
-    year: 1991,
-    rating: 3.8,
-    comments: 156152,
-    views: 989845965,
-  };
-  videoList.push(newVideo);
-  // video array에 video 추가
+
   return res.redirect("/");
 };
 
