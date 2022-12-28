@@ -3,7 +3,7 @@ extends ./partials/layout
 block head
   title EDIT | Wetube
 
-block mainText
+block content
   h1 Edit #{ video.title } !
   form(method="POST")
     input(name="title", placeholder="New Title", value=video.title, required)

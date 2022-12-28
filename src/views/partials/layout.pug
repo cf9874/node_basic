@@ -1,9 +1,24 @@
 doctype html
-html(lang="ko")
+html(lang="en")
   head
-    block head
+    title #{ pageTitle } | Wetube
+    script(type="text/javascript").
     link(rel="stylesheet", href="https://unpkg.com/mvp.css")
-  body
-    main
-      block mainText
-      include ./footer
+body
+  header
+    nav
+      ul
+        if fakeUser.loggedIn
+          li
+            a(href="/logout") Logout
+        else
+          li
+            a(href="/login") Login
+    h1= pageTitle
+  main
+    block content
+    block subs
+    input(placeholder="what is your name")
+    button send
+    br
+include ./footer.pug

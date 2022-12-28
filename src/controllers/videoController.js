@@ -1,16 +1,57 @@
 import { EDIT, HOME, WATCH } from "../enum";
 import Video from "../models/Video";
 
+const fakeUser = {
+  username: "kim",
+  loggedIn: false,
+};
+
+const videos = [
+  {
+    title: "abdasdwc",
+    rating: 4,
+    comments: 2521856,
+    createdAt: "2 minutes ago",
+    views: 595496,
+    id: 1,
+  },
+  {
+    title: "abasdsdc",
+    rating: 4,
+    comments: 5418612,
+    createdAt: "2 minutes ago",
+    views: 5541869,
+    id: 2,
+  },
+  {
+    title: "aaasdsc",
+    rating: 4,
+    comments: 126352,
+    createdAt: "2 minutes ago",
+    views: 59508548,
+    id: 3,
+  },
+  {
+    title: "abc1asd56as41213as",
+    rating: 4,
+    comments: 2,
+    createdAt: "2 minutes ago",
+    views: 59,
+    id: 4,
+  },
+];
+
 export const handleHome = async (req, res) => {
   try {
-    const videos = await Video.find({});
+    // const videos = await Video.find({});
 
     // callback과 달리 DB에서 결과값을 받아올 때 까지
     // 다음 실행을 기다림
 
     return res.render("home", {
       pageTitle: HOME,
-      videoList: videos,
+      videos,
+      fakeUser,
     });
   } catch (error) {
     console.log(error);
